@@ -1,6 +1,7 @@
 const express = require('express')
 const mongoose = require('mongoose')
 
+
 const options = {
     useNewUrlParser: true,
     useUnifiedTopology: true
@@ -60,7 +61,7 @@ app.put('/cats/:id',async(req,res)=>{
             age
         }
     };
-    const Cat = await CatModel.findByIdAndUpdate(id,updated,{new:true});
+    const Cat = await CatModel.findByIdAndUpdate(id,updated,{new:true}); //{new:true}ใส่เพื่อรีเทิร์นค่าที่ถูกอัปเดทแล้วออกมา
     res.json(cat);
 });
 
